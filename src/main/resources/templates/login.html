@@ -19,19 +19,19 @@
             <h1>Login</h1>
         </div>
 
-        <div class="alert alert-danger" role="alert" th:if="${true}" >
-            <span>A simple danger alert—check it out! <p th:text="${tipo.codigo}"></p> </span>
+        <div class="alert alert-danger" role="alert" th:if="${loginModel.codigo != '00'}">
+            <span th:text="${loginModel.mensaje}"></span>
         </div>
 
         <div>
-            <select id="tipoDocumento" name="numeroDocumento" class="form-select form-select.l">
+            <select id="tipoDocumento" name="tipoDocumento" class="form-select form-select.l">
                 <option value="1">DNI</option>
                 <option value="2">Documento</option>
                 <option value="3">Pasaporte</option>
             </select>
         </div>
         <div class="mb-3">
-            <input type="text" value="aaa" name="numeroDocumento" placeholder="ingrese numero" class="form-control form-control-lg"/>
+            <input type="text" name="numeroDocumento" placeholder="ingrese numero" class="form-control form-control-lg"/>
         </div>
         <div class="mb-3">
             <input type="password" name="password" class="form-control form-control-lg" />
